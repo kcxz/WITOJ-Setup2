@@ -21,6 +21,9 @@ sudo cd /home/judge && mkdir etc data log src run0 run1 run2 run3
 
 ## 获取代码
 首先你需要安装 git 客户端，因为我们的核心代码放在 git 仓库中。
+```
+sudo apt-get install -y git
+```
 
 ## 获取到WITOJ的代码：
 ```
