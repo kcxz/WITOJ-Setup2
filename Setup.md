@@ -45,10 +45,10 @@ sudo systemctl enable judged.service
 将原来服务器mysql上的jol数据库导出再到新的服务器上，mysql数据库导入可以用自带的mysqldump程序。
 
 ### 转移网站图片数据
-将原来服务器/home/judge/src/web/uploads下面的文件复制到新服务器当前同样的目录下
+将原来服务器`/home/judge/src/web/uploads`下面的文件复制到新服务器当前同样的目录下
 
 ### 转移题目数据
-将原来服务器/home/judge/data下的文件全部复制到新服务器当前同样的目录下
+将原来服务器`/home/judge/data`下的文件全部复制到新服务器当前同样的目录下
 
 ## 修改Nginx配置
 Nginx配置文件在`/etc/nginx/sites-enabled/default`打开修改类似如下，你应该知道这是什么。
