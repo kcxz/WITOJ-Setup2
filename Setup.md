@@ -33,10 +33,12 @@ sudo cp -r ./WITOJ_Install/* /home/judge/src
 ```
 
 ## 编译部署 judge 程序
+```
 cd /home/judge/src/core/
 sudo sh make.sh
 sudo cp ./judged.service /lib/systemd/system
 sudo systemctl enable judged.service
+```
 
 ## 修改Nginx配置
 Nginx配置文件在`/etc/nginx/sites-enabled/default`打开修改类似如下，你应该知道这是什么。
