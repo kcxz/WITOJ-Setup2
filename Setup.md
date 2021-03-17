@@ -22,3 +22,21 @@ sudo cd /home/judge && mkdir etc data log src run0 run1 run2 run3
 ## 获取代码
 首先你需要安装 git 客户端，因为我们的核心代码放在 git 仓库中。
 
+## 获取到WITOJ的代码：
+```
+cd && git clone -b master --depth=1 https://gitee.com/Wangchenchuang/WITOJ_Install.git
+```
+
+## 将代码放在src文件夹
+```
+sudo cp -r ./WITOJ_Install/* /home/judge/src
+```
+
+## 编译部署 judge 程序
+cd /home/judge/src/core/
+sudo sh make.sh
+sudo cp ./judged.service /lib/systemd/system
+sudo systemctl enable judged.service
+
+## 修改Nginx配置
+Nginx配置文件在`/etc/nginx/sites-enabled/default`打开修改类似如下，你应该知道这是什么。
