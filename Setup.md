@@ -8,3 +8,17 @@
 ```
 sudo apt-get update && sudo apt-get install -y make flex g++ clang libmysqlclient-dev libmysql++-dev php-fpm php-common nginx mysql-server php-mysql php-gd php-zip fp-compiler openjdk-8-jdk mono-devel php-mbstring php-xml php-xml
 ```
+
+## 创建新用户
+创建名字叫 judge 用户，之后 judge 程序就以 judge 的身份运行
+```
+sudo useradd -m -u 1536 judge
+```
+进入judge文件夹内，并且创建几个重要的文件夹。
+```
+sudo cd /home/judge && mkdir etc data log src run0 run1 run2 run3
+```
+
+## 获取代码
+首先你需要安装 git 客户端，因为我们的核心代码放在 git 仓库中。
+
