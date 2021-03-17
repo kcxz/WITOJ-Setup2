@@ -76,4 +76,28 @@ location ~ \.php$ {
 }
 ```
 
+## 修改WITOJ配置
+### 修改给判题机的配置文件
+首先将配置文件复制到正确目录下
+```
+sudo cp -r /home/judge/src/install/etc/* /home/judge/etc
+```
 
+打开`/home/judge/etc/judge.conf`在第二行，需要修改的是你的mysql服务器的用户名和密码
+```
+OJ_USER_NAME=你的mysql用户名
+OJ_PASSWORD=你的mysql密码
+```
+
+## 修改网站的配置文件
+网站的配置文件在`/home/judge/src/web/include/config.php`, 同样在第49行，修改的是你的mysql服务器的用户名和密码
+```
+$SQL_DB_USER = "你的mysql用户名";
+$SQL_DB_PASS = "你的mysql密码";
+```
+
+## 启动
+```
+sudo systemctl start judged
+sudo systemctl restart nginx
+```
