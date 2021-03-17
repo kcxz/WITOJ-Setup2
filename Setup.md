@@ -42,3 +42,28 @@ sudo systemctl enable judged.service
 
 ## 修改Nginx配置
 Nginx配置文件在`/etc/nginx/sites-enabled/default`打开修改类似如下，你应该知道这是什么。
+```
+listen 80 default_server;
+listen [::]:80 default_server;
+
+root /home/judge/src/web;
+
+location /recent-contest.json {
+    proxy_pass http://contests.acmicpc.info/contests.json;
+}
+
+index index.html index.php index.htm index.nginx-debian.html;
+
+location / {
+    try_files $uri $uri/ =404;
+}
+
+# 设置php文件的转发
+location ~ \.php$ {
+    include snippets/fastcgi-php.conf;
+    # sock文件名字可能根据php的版本不同而不同，记得修改
+    fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+}
+```
+
+
